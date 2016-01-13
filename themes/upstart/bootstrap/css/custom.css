@@ -33,7 +33,7 @@
 
 .h1, .h2, .h3, h1, h2, h3 {
   margin-bottom: 10px;
-  margin-top:0px;
+  margin-top:0;
 }
 body{
 	background-color:#e1eaf3;
@@ -45,12 +45,11 @@ body{
 	margin-top:20px;
 }
 .home_top_left{
-	padding-right:0px;
-  padding-left:0px;
+	padding-right:0;
+  padding-left:0;
 }
 .home_top_right{
 	background-color:#eaeaea;
-	border:1px #d1d5d9 solid;
 	padding:20px;
 	height:329px;
 	font-size:24px;
@@ -61,13 +60,13 @@ body{
     height:100%;
   }
 }
-h1{
+/*.home_top_right h1{
 	font-size:50px;
 	font-family:'MyriadProSemibold', Arial;
-}
+}*/
 .home_top_right_main{
-	padding-left:0px;
-  padding-right:0px;
+	padding-left:0;
+  padding-right:0;
 }
 .home_top_right p{
 	padding-bottom:50px;
@@ -105,7 +104,7 @@ font-size:14px;
 .cats_inner .cats_content{
 	padding:10px;
 	background:#FFFFFF;
-	margin-bottom:0px;
+	margin-bottom:0;
 	color:#a8a8a8;
 	font-size:16px;
 }
@@ -162,8 +161,14 @@ h2{
 .blog_new_list{
 	margin-top:10px;
 }
+.blog_new_list .hero-feature:nth-child(1){
+  padding-left: 0;
+}
+.blog_new_list .hero-feature:nth-child(3){
+  padding-right: 0;
+}
 .thumbnail {
-  padding: 0px;
+  padding: 0;
 }
 .thumbnail .blog_img{
   padding: 10px;
@@ -172,8 +177,6 @@ h2{
 }
 .thumbnail .caption {
 	background-color:#ececec;
-	border:1px solid #9b9b9b;
-	border-radius:2px;
 	padding:10px;
 }
 .thumbnail .caption .btn{
@@ -186,7 +189,7 @@ h2{
 	min-height:55px;
 	font-family:'MyriadProRegular', Arial;
 	font-size:18px;
-	color:#a8a8a8
+	color:#000000
 }
 .thumbnail .blog_img img{
 	margin:auto;
@@ -213,9 +216,9 @@ h2{
 }
 .parents_kids_container{
 	background: #ffffff none repeat scroll 0 0;
-    height: 250px;
-    margin-top: 205px;
-	box-shadow: 0 0px 8px #888888;
+  height: 250px;
+  margin-top: 205px;
+  box-shadow: 0 0 8px #888888;
 }
 .parents_kids_container h1{
 	text-align:center;
@@ -244,7 +247,7 @@ h2{
 .loc_title{
 	background: #fff none repeat scroll 0 0;
 	bottom: 0;
-	color: #a8a8a8;
+	color: #000000;
 	font-family: "MyriadProRegular",Arial;
 	font-size: 18px;
 	min-height: 40px;
@@ -293,8 +296,14 @@ h2{
   padding-bottom: 30px;
   padding-top: 30px;
 }
-.carousel_row{
-	margin-top:30px;
+.carousel-row{
+	margin-top:15px;
+}
+.carousel-row .col-md-6:nth-child(even){
+  padding-right: 0;
+}
+.carousel-row .col-md-6:nth-child(odd){
+  padding-left: 0;
 }
 .carousel{
 	height:auto !important;
@@ -307,35 +316,48 @@ h2{
 	margin: 20px;
 }
 .carousel-caption {
+  position:absolute;
   left: 0;
   text-align:left;
   padding-bottom:0;
-  bottom:0px;
-  background-image:url(../../images/slider_2_bg.png);
+  padding-top:0;
+  bottom:0;
+  min-height:75px;
+  background-color:rgba(41, 41, 41, 0.91); /* url(../../images/slider_2_bg.png)*/
   background-position:center center;
   background-size:contain;
   background-repeat:repeat;
   right:0px;
 }
-.carousel-caption h3{
+.carousel-caption .workshop-title{
 	font-family: "MyriadProRegular",Arial;
 	font-size: 18px;
 	padding-left:20px;
+  line-height: 20px;
 }
 .carousel-caption .btn{
 	background-color:#00a99d;
 	border:none;
 }
+.carousel-caption a{
+  position: absolute;
+  margin-top: 20px;
+  z-index: 2000px;
+}
 
 #myCarousel1 .carousel-caption {
-  background-image:url(../../images/slider_1_back.png);
-  background-position:center center;
-  background-size:contain;
-  background-repeat:repeat;
+  background-color: rgba(255, 255, 255, 0.52);
+  text-shadow: 1px 1px 2px #000000;
 }
 
 #myCarousel1 .carousel-caption {
 	color:#1F1F1F
+}
+.looking .carousel-caption{
+  text-shadow: 1px 1px 2px #ffffff;
+}
+.workshop-title{
+  margin-top: 17px;
 }
 .blog_list_but{
 	text-align:left !important;

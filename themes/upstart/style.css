@@ -3945,8 +3945,8 @@ img.ui-datepicker-trigger {
   display: block;
   text-indent: -9999px;
   position: relative;
-  height: 1em;
-  width: 1em;
+  height: 140px;
+  width: 140px;
   margin: 0 auto .202em;
   font-size: 3.631em;
   padding: .382em;
