@@ -1,0 +1,231 @@
+/**
+ * Integration styles
+ */
+@import url(../../../../css/mixins.less);
+
+.post-type-archive-testimonial {
+	.blog-posts-grid {
+		> article {
+			width:100%;
+			padding-top:100%;
+			overflow: auto;
+			.post-more {
+				display: none;
+			}
+			.testimonial-content {
+				&:before {
+					.iconafter("\f10d");
+					position: absolute;
+					font-size:2.244em;
+					top:.202em;
+					right:0;
+				}
+			}
+		}
+	}
+}
+
+#main {
+	.widget_woothemes_testimonials  {
+		.large_bottom_margin;
+		.testimonials-list {
+			.clearfix;
+			.quote {
+				width:48%;
+				margin-left:1%;
+				margin-right:1%;
+				float: right;
+				.avatar-link {
+					display: block;
+					max-width: 5.874em;
+					margin: 0 auto;
+					img {
+						width:100%;
+						height: auto;
+						.border_radius( 100% );
+					}
+				}
+				.testimonials-text {
+					.content;
+					margin-left:0;
+					margin-right:0;
+					position: relative;
+					&:after {
+						position: absolute;
+						content: "";
+						border:1em solid @border_main;
+						border-color:@border_main transparent transparent transparent;
+						bottom:-2em;
+						left:50%;
+						margin-left:-1em;
+					}
+				}
+				.author {
+					display: block;
+					font-weight: 700;
+					font-style: normal;
+					.excerpt {
+						display: block;
+					}
+					.url {
+						font-weight: normal;
+					}
+				}
+			}
+		}
+		.fix {
+			display: none;
+		}
+		.first, .last {
+			clear: none;
+		}
+	}
+}
+
+// Layout
+@media only screen and (min-width: 768px) {
+	.no-csstransitions {
+		#main {
+			.widget_woothemes_testimonials {
+				.testimonials-list {
+					.quote {
+						.testimonials-text {
+							-ms-transform:none;
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	#main {
+		.widget_woothemes_testimonials {
+			background: @color_links;
+			.clearfix;
+			.testimonials-list {
+				width:50%;
+				float: right;
+				position: relative;
+				.quote {
+					margin-left:0;
+					margin-right:0;
+					.testimonials-text {
+						background:none;
+						padding:0;
+						border:0;
+						width:50%;
+						margin-top:0;
+						position: absolute;
+						top:2.618em;
+						-webkit-box-shadow:none;
+						box-shadow:none;
+						left:-50%;
+						padding-right:2.618em;
+						.borderbox;
+						-webkit-transform:translateX(-2000px);
+						-ms-transform:translateX(-2000px);
+						-moz-transform:translateX(-2000px);
+						transform:translateX(-2000px);
+						color: lighten(@color_links,25%);
+						overflow: visible;
+						&:before {
+							.iconbefore("\f10d");
+							position: absolute;
+							font-size:2.244em;
+							top:.202em;
+							left:-1.618em;
+						}
+						a {
+							color: #fff;
+							text-decoration: underline;
+						}
+						.url {
+							display: none;
+						}
+						.excerpt {
+							font-weight: normal;
+						}
+						&:after {
+							display: none;
+						}
+						.author {
+							font-size:1.387em;
+							color: #fff;
+							margin-bottom:1em;
+						}
+					}
+					.avatar-link {
+						max-width: none;
+						img {
+							.border_radius(0);
+						}
+					}
+					.avatar {
+						.opacity(0.5);
+						.transition;
+						-webkit-transform:translateZ(0);
+						z-index: 999;
+						&:hover, &.active {
+							.opacity(1);
+						}
+					}
+				}
+			}
+		}
+		.type-page, .content-box {
+			.widget_woothemes_testimonials {
+				margin-left:-9.505em;
+				margin-right:-9.505em;
+			}
+		}
+	}
+	.post-type-archive-testimonial {
+		.blog-posts-grid {
+			> article {
+				width:33%;
+				padding-top:33%;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: @largescreen) {
+	.post-type-archive-testimonial {
+		.blog-posts-grid {
+			> article {
+				width:25%;
+				padding-top:25%;
+			}
+		}
+	}
+}
+
+p.more-testimonials {
+	text-align: center;
+	margin-top:-5.874em;
+	padding:3.236em 0;
+	background: rgba(255,255,255,0.6);
+	.large_bottom_margin;
+	a {
+		&:after {
+			.iconafter("\f0e5");
+		}
+	}
+}
+
+@media only screen and (min-width: @largescreen) {
+	#main {
+		.widget_woothemes_testimonials {
+			.testimonials-list {
+				width:33%;
+				.quote {
+					.testimonials-text {
+						width:100%;
+						left:-100%;
+						font-size: 1.1em;
+					}
+				}
+			}
+		}
+	}
+}

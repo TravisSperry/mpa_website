@@ -1,0 +1,87 @@
+/**
+ * Integration styles
+ */
+@import url(../../../../css/mixins.less);
+
+.home {
+	.widget_woothemes_features {
+		.feature {
+			-webkit-transform:translateX(-2000px);
+		    -moz-transform:translateX(-2000px);
+		    -o-transform:translateX(-2000px);
+		    transform:translateX(-2000px);
+			&.alt, &:nth-child(2n) {
+				-webkit-transform:translateX(2000px);
+		    	-moz-transform:translateX(2000px);
+		    	-o-transform:translateX(2000px);
+		    	transform:translateX(2000px);
+			}
+		}
+	}
+}
+.widget_woothemes_features  {
+	.large_bottom_margin;
+	.feature  {
+	    width: 100%;
+	    list-style: none;
+	    margin-bottom: 4.236em;
+	    .clearfix;
+	    .wp-post-image {
+	    	display:block;
+	    	margin:0 auto;
+	    	height: auto;
+	    	float:left;
+	    	width:33%;
+	    }
+	    .feature-title, .feature-content {
+	    	width:60%;
+	    	float: right;
+	    	clear:right;
+	    }
+	    &.alt, &:nth-child(2n) {
+	    	background: rgba(0,0,0,0.025);
+	    	padding:4.236em 0;
+	    	-webkit-box-shadow:
+	    		15em 0 0 0 rgba(0,0,0,0.025),
+	    		-15em 0 0 0 rgba(0,0,0,0.025);
+	    	box-shadow:
+	    		15em 0 0 0 rgba(0,0,0,0.025),
+	    		-15em 0 0 0 rgba(0,0,0,0.025);
+	    	.wp-post-image {
+	    		float: right;
+	    	}
+	    	.feature-title, .feature-content {
+	    		float: left;
+	    		clear:left;
+	    	}
+	    }
+	    &:nth-child(2) {
+	    	-webkit-animation-delay: .5s;
+	    	-moz-animation-delay: .5s;
+	    	animation-delay: .5s;
+	    }
+	    &:nth-child(3) {
+	    	-webkit-animation-delay: 1s;
+	    	-moz-animation-delay: 1s;
+	    	animation-delay: 1s;
+	    }
+	}
+	.features .final-feature {
+		margin-bottom:0;
+	}
+}
+
+// Layout
+@media only screen and (min-width: 768px) {
+	#main {
+		.widget_woothemes_features {
+			.feature {
+				.feature-title {
+			    	font-size:2.618em;
+			    	line-height: 1.387;
+			    	letter-spacing: -2px;
+			    }
+			}
+		}
+	}
+}

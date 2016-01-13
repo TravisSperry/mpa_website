@@ -1,0 +1,681 @@
+/*
+The styles in this stylesheet only apply to resolutions 769px and up
+
+CALCULATING DIMENSIONS:
+----------------------
+The layout is fluid. The sote wrapper (.col-full) has a fixed pixel max-width.
+All subsequent dimensions are calculated based on that fixed pixel width, using the formula: target / context = result
+Credit - http://www.alistapart.com/articles/fluidgrids/
+
+-----
+INDEX
+-----
+
+1. Global dropdown styles
+2. Top Navigation
+3. Main navigation dropdown menus
+ -3.1 General dropdown menus
+4. Containers & Columns
+5. Footer widgets
+6. IE Fixes
+
+/*----------------------*/
+@-webkit-keyframes spin-360 {
+  from {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+    zoom: 1;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    zoom: 1;
+  }
+  to {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+    zoom: 1;
+  }
+}
+/*----------------------*/
+@media only screen and (min-width: 769px) {
+  body {
+    font-size: 1.618em;
+  }
+  #inner-wrapper {
+    left: 0 !important;
+  }
+  /* 1. GLOBAL DROPDOWN STYLES (these are purely for the dropdown layout and you should only edit the width of the dropdowns) */
+  ul.nav {
+    position: relative;
+    margin-bottom: 0;
+    /* LEVEL 2 */
+    /* LEVEL 3 */
+  }
+  ul.nav li {
+    position: relative;
+    float: left;
+    zoom: 1;
+    list-style: none;
+  }
+  ul.nav li a {
+    display: block;
+    padding: .53em 1em;
+  }
+  ul.nav ul {
+    width: 11.089em;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    margin: 0;
+    -webkit-transform: translateY(-1em) translateZ(0);
+    -webkit-transition: all ease-in-out 0.2s;
+    -moz-transition: all ease-in-out 0.2s;
+    -ms-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
+    opacity: 0;
+    filter: alpha(opacity=@opacity * 100);
+  }
+  ul.nav ul li {
+    float: none;
+  }
+  ul.nav ul li a {
+    width: 100%;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  ul.nav ul ul {
+    left: 100%;
+    top: 0;
+  }
+  ul.nav li:hover > ul {
+    visibility: visible;
+    -webkit-transform: translateY(0) translateZ(0);
+    opacity: 1;
+    filter: alpha(opacity=@opacity * 100);
+  }
+  /* 2. TOP NAVIGATION (Add top navigation presentational styles here) */
+  #top {
+    background: #355264;
+    display: block;
+  }
+  #top:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+  }
+  #top .site-description {
+    letter-spacing: 0;
+  }
+  #top nav.col-full {
+    font-size: .857em;
+  }
+  #top a {
+    color: #47b39d;
+  }
+  #top a:hover {
+    color: #99cfa9;
+  }
+  #top .site-description {
+    font-weight: 400;
+    font-size: 1em;
+    float: left;
+    color: #a0b0c1;
+    padding: 1em 1.618em 1em 0;
+    line-height: 1.618;
+    margin: 0;
+  }
+  #top .top-navigation {
+    float: right;
+    color: #133042;
+  }
+  #top .top-navigation .social {
+    float: right;
+    padding: .75em 0 .75em 1.618em;
+    margin-left: 1.618em;
+  }
+  #top .top-navigation .social:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+  }
+  #top .top-navigation .social a {
+    margin: 0 0 0 .53em;
+  }
+  #top .top-navigation .social a:first-of-type {
+    margin-left: 0;
+  }
+  #top .top-navigation .social a:last-of-type {
+    padding-right: 0;
+  }
+  #top .top-navigation #top-nav {
+    float: right;
+  }
+  #top #top-nav,
+  #top .top-navigation {
+    display: block;
+  }
+  #top #top-nav h3,
+  #top .top-navigation h3 {
+    display: none;
+  }
+  #top ul.nav {
+    z-index: 999;
+    /* LEVEL 2 */
+    /* LEVEL 3 */
+  }
+  #top ul.nav > li > a {
+    padding: 1em .53em;
+  }
+  #top ul.nav > li > a:after {
+    content: "|";
+    margin-left: 1em;
+    color: #577486;
+  }
+  #top ul.nav > li > a:hover {
+    color: #99cfa9;
+  }
+  #top ul.nav > li.current-menu-item a {
+    background: none;
+  }
+  #top ul.nav > li:hover > a {
+    color: #99cfa9;
+  }
+  #top ul.nav > li:last-child > a:after {
+    display: none;
+  }
+  #top ul.nav ul {
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-border-bottom-left-radius: 0.236em;
+    -webkit-border-bottom-right-radius: 0.236em;
+    border-bottom-left-radius: 0.236em;
+    border-bottom-right-radius: 0.236em;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    box-shadow: inset 0 0.236em 2px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: inset 0 0.236em 2px 0 rgba(0, 0, 0, 0.05);
+    border-bottom: 0.236em solid #47b39d;
+  }
+  #top ul.nav ul li a {
+    color: #47b39d;
+  }
+  #top ul.nav ul li a:hover {
+    background: #99cfa9;
+    color: #fff;
+  }
+  #top ul.nav ul li:hover > a {
+    color: #fff;
+    background: #99cfa9;
+  }
+  /* 3. MAIN NAVIGATION DROPDOWN MENUS (Add main navigation presentational styles here) */
+  /**
+	 * Resets
+	 * As the mobile nav features extensive styling, much of it needs to be reset for desktop orientation
+	 */
+  .show-nav #inner-wrapper {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+  .show-nav #navigation .top-navigation {
+    display: none;
+  }
+  /**
+	 * The main navigation styling
+	 */
+  #navigation {
+    position: relative;
+    left: auto;
+    float: right;
+    padding-top: 0;
+    background: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    clear: none;
+    margin: 0;
+    width: auto;
+  }
+  #navigation .menus h3 {
+    display: none;
+  }
+  #navigation a {
+    font-weight: 700;
+  }
+  #navigation ul.nav {
+    float: right;
+    margin: 0;
+    /* LEVEL 2 */
+    /* LEVEL 3 */
+  }
+  #navigation ul.nav > li > a {
+    padding: 2.244em 1em;
+    color: #1C2D41;
+    -webkit-transition: all ease-in-out 0.2s;
+    -moz-transition: all ease-in-out 0.2s;
+    -ms-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
+  }
+  #navigation ul.nav > li > a:hover {
+    box-shadow: inset 0 0.382em 0 0 #99cfa9;
+    -webkit-box-shadow: inset 0 0.382em 0 0 #99cfa9;
+    color: #fff;
+  }
+  #navigation ul.nav > li:hover > a {
+    box-shadow: inset 0 0.382em 0 0 #99cfa9;
+    -webkit-box-shadow: inset 0 0.382em 0 0 #99cfa9;
+    color: #fff;
+  }
+  #navigation ul.nav > li.current-menu-item > a {
+    color: #fff;
+  }
+  #navigation ul.nav > li.current-menu-item > a:hover {
+    box-shadow: inset 0 0.382em 0 0 #99cfa9;
+    -webkit-box-shadow: inset 0 0.382em 0 0 #99cfa9;
+  }
+  #navigation ul.nav > li.current-menu-item:hover > a {
+    box-shadow: inset 0 0.382em 0 0 #99cfa9;
+    -webkit-box-shadow: inset 0 0.382em 0 0 #99cfa9;
+  }
+  #navigation ul.nav > li.parent > a:after {
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    speak: none;
+    width: 1.387em;
+    display: inline-block;
+    text-align: right;
+    line-height: 1;
+    content: "\f107";
+  }
+  #navigation ul.nav > li.parent > a:hover:after {
+    color: #99cfa9;
+  }
+  #navigation ul.nav > li.parent:hover > a:after {
+    color: #99cfa9;
+  }
+  #navigation ul.nav li a {
+    text-shadow: none;
+    border: 0;
+  }
+  #navigation ul.nav li.current-menu-item > a {
+    background: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-shadow: none;
+  }
+  #navigation ul.nav li.current-menu-item > a:after {
+    display: none;
+  }
+  #navigation ul.nav li.current-menu-item.parent > a:after {
+    display: block;
+    line-height: 1.618;
+    font-size: 1em;
+  }
+  #navigation ul.nav li ul a,
+  #navigation ul.nav li ul ul li a {
+    padding: .53em 1.387em;
+  }
+  #navigation ul.nav ul {
+    background: rgba(53, 82, 100, 0.9);
+    padding: 1em 0;
+    left: 0;
+  }
+  #navigation ul.nav ul li a {
+    color: #fff;
+    padding-left: 1.387em;
+    -webkit-transition: all ease-in-out 0.2s;
+    -moz-transition: all ease-in-out 0.2s;
+    -ms-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
+    -webkit-transform: translateZ(0);
+  }
+  #navigation ul.nav ul li a:hover {
+    padding-left: 1.618em;
+  }
+  #navigation ul.nav ul li.parent > a:after {
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    speak: none;
+    width: 1.387em;
+    display: inline-block;
+    text-align: right;
+    line-height: 1;
+    content: "\f105";
+    float: right;
+    line-height: 1.618;
+  }
+  #navigation ul.nav ul li.parent > a:hover {
+    padding-left: 1.618em;
+  }
+  #navigation ul.nav ul li.parent > a:hover:after {
+    color: #99cfa9;
+  }
+  #navigation ul.nav ul li.parent:hover > a {
+    padding-left: 1.618em;
+  }
+  #navigation ul.nav ul li.parent:hover > a:after {
+    color: #99cfa9;
+  }
+  #navigation ul.nav ul ul {
+    top: -1em;
+    left: 100%;
+  }
+  #navigation ul.cart,
+  #navigation ul.rss {
+    float: right;
+  }
+  #navigation .nav-close,
+  #navigation .nav-home {
+    display: none;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .csstransforms3d.csstransitions #navigation,
+  .csstransforms3d.csstransitions .show-nav #navigation,
+  .csstransforms3d.csstransitions .show-nav #inner-wrapper {
+    left: 0;
+    -webkit-transform: translate3d(0%, 0, 0);
+    -moz-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+  }
+  /* 4. CONTAINERS & COLUMNS */
+  .content-container {
+    /*padding-left: 2em;
+    padding-right: 2em;*/
+  }
+  .content-container-fullwidth {
+    margin-left: -6.854em;
+    margin-right: -6.854em;
+    padding-left: 6.854em;
+    padding-right: 6.854em;
+  }
+  .content-container-fullwidth-nopadding {
+    margin-left: -6.854em;
+    margin-right: -6.854em;
+  }
+  #header .site-header {
+    margin-right: 1.618em;
+    float: left;
+  }
+  #header .site-header h1,
+  #header .site-header h2,
+  #header .site-header h3 {
+    float: none;
+  }
+  #header #logo {
+    margin: 2.244em 0 0 0;
+    padding: 0;
+    float: left;
+  }
+  #header .site-title {
+    text-align: left;
+  }
+  #header .site-title {
+    padding: 0;
+    font-size: 1.387em;
+  }
+  #header .site-title a {
+    display: block;
+    padding: 1.618em 0;
+  }
+  #header ul.rss {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  #header ul.rss li {
+    border-right: 0;
+  }
+  #header ul.rss li,
+  #header ul.cart li {
+    border-right: 0;
+  }
+  #main.fullwidth,
+  .layout-full #main,
+  .col-full {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .entry img {
+    max-width: 100%;
+  }
+  .entry blockquote {
+    padding-right: 15.379em;
+  }
+  .layout-full .entry img {
+    max-width: 100%;
+  }
+  .page-template-template-sitemap-php #sitemap-pages,
+  .page-template-template-sitemap-php .product-categories {
+    float: left;
+    width: 48%;
+  }
+  .page-template-template-sitemap-php #sitemap-categories,
+  .page-template-template-sitemap-php .products {
+    float: right;
+    width: 48%;
+  }
+  .page-template-template-sitemap-php #sitemap-posts {
+    clear: both;
+  }
+  .page-template-template-sitemap-php .woocommerce:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+  }
+  .page-template-template-contact-php .location-twitter .col-left {
+    float: left;
+  }
+  .page-template-template-contact-php .location-twitter #office-location {
+    width: 48%;
+    margin: 0 1em 0 0;
+  }
+  .page-template-template-contact-php .location-twitter .contact-social {
+    float: left;
+    width: 48%;
+  }
+  .page-template-template-contact-php .location-twitter .contact-social #twitter {
+    margin: 0;
+  }
+  #main .type-page,
+  #main .content-box,
+  .single #main > .product,
+  .sensei-wrap {
+    max-width: 65.141em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5.874em 9.505em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #main .type-page .content-box-fullwidth,
+  #main .content-box .content-box-fullwidth,
+  .single #main > .product .content-box-fullwidth,
+  .sensei-wrap .content-box-fullwidth {
+    margin-left: -9.505em;
+    margin-right: -9.505em;
+    padding-left: 9.505em;
+    padding-right: 9.505em;
+  }
+  #main .type-page .alignleft,
+  #main .content-box .alignleft,
+  .single #main > .product .alignleft,
+  .sensei-wrap .alignleft {
+    margin-left: -9.505em;
+  }
+  #main .type-page .alignright,
+  #main .content-box .alignright,
+  .single #main > .product .alignright,
+  .sensei-wrap .alignright {
+    margin-right: -9.505em;
+  }
+  #main .type-page ul.products,
+  #main .content-box ul.products,
+  .single #main > .product ul.products,
+  .sensei-wrap ul.products {
+    margin-left: -9.505em;
+    margin-right: -9.505em;
+  }
+  #main .featured-image,
+  #main > .video {
+    max-width: 65.141em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* 5. FOOTER WIDGETS */
+  #footer-widgets .block {
+    margin-right: 3.8%;
+    float: left;
+  }
+  #footer-widgets.col-1 .block {
+    width: 100%;
+    float: none;
+  }
+  #footer-widgets.col-1 .footer-widget-1 {
+    margin-right: 0;
+  }
+  #footer-widgets.col-2 .block {
+    width: 48%;
+  }
+  #footer-widgets.col-2 .footer-widget-2 {
+    margin-right: 0;
+  }
+  #footer-widgets.col-3 .block {
+    width: 30.75%;
+  }
+  #footer-widgets.col-3 .footer-widget-3 {
+    margin-right: 0;
+  }
+  #footer-widgets.col-4 .block {
+    width: 22.05%;
+  }
+  #footer-widgets.col-4 .footer-widget-4 {
+    margin-right: 0;
+  }
+  /* 6. IE FIXES */
+  .ie7 #top-nav {
+    position: relative;
+    z-index: 9999999;
+  }
+  .ie7 #header {
+    position: relative;
+    z-index: 9999999;
+  }
+  /* 7. POSTS */
+  .archive-description {
+    font-size: 1.387em;
+  }
+  .archive-description p {
+    max-width: 75%;
+  }
+  .archive-description + .archive-description {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .blog-posts-grid > article {
+    width: 33.33333%;
+    padding-top: 33.33333%;
+  }
+  .no-csstransitions .blog-posts-grid > article.has-image .post-header,
+  .no-csstransitions .blog-posts-grid > article.has-image .post-more {
+    opacity: 0;
+    filter: alpha(opacity=@opacity * 100);
+    -webkit-transition: all ease-in-out 0.2s;
+    -moz-transition: all ease-in-out 0.2s;
+    -ms-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
+  }
+  .no-csstransitions .blog-posts-grid > article.has-image:hover .post-header,
+  .no-csstransitions .blog-posts-grid > article.has-image:hover .post-more {
+    opacity: 1;
+    filter: alpha(opacity=@opacity * 100);
+  }
+  #comments ul.children {
+    margin-left: 6.854em;
+  }
+  /* Homepage */
+  .homepage-contact ul {
+    max-width: 65.141em;
+    margin: 0 auto;
+  }
+  .homepage-contact ul li {
+    width: 25%;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .blog-posts-grid > article {
+    width: 100%;
+    padding-top: 100%;
+  }
+}
+@media only screen and (min-width: 536px) {
+  #main .type-page ul.products li.product,
+  #main .content-box ul.products li.product,
+  .single #main > .product ul.products li.product {
+    width: 50%;
+    padding-top: 50%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .blog-posts-grid > article {
+    width: 25%;
+    padding-top: 25%;
+  }
+}
+@media only screen and (width: 1024px) and (height: 768px) {
+  .blog-posts-grid .post {
+    font-size: .8em;
+  }
+  ul.products li.product {
+    font-size: .8em;
+  }
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

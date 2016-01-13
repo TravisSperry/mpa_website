@@ -1,0 +1,660 @@
+/*
+The styles in this stylesheet only apply to resolutions 769px and up
+
+CALCULATING DIMENSIONS:
+----------------------
+The layout is fluid. The sote wrapper (.col-full) has a fixed pixel max-width.
+All subsequent dimensions are calculated based on that fixed pixel width, using the formula: target / context = result
+Credit - http://www.alistapart.com/articles/fluidgrids/
+
+-----
+INDEX
+-----
+
+1. Global dropdown styles
+2. Top Navigation
+3. Main navigation dropdown menus
+ -3.1 General dropdown menus
+4. Containers & Columns
+5. Footer widgets
+6. IE Fixes
+
+/*----------------------*/
+
+@import "mixins";
+
+/*----------------------*/
+
+@media only screen and (min-width: 769px) {
+
+	body {
+		font-size: 1.618em;
+	}
+
+	#inner-wrapper {
+		left:0 !important; // Reset the mobile nav effects
+	}
+
+	/* 1. GLOBAL DROPDOWN STYLES (these are purely for the dropdown layout and you should only edit the width of the dropdowns) */
+	ul.nav {
+	    position: relative;
+	    margin-bottom:0;
+	    li {
+	    	position: relative;
+	    	float: left;
+	    	zoom:1;
+	    	list-style: none;
+	    	a {
+	    		display: block;
+	    		padding:.53em 1em;
+	    	}
+	    	&.parent { // Styles applied to all parent list items
+	    	}
+	    }
+	    /* LEVEL 2 */
+	    ul {
+	    	width:11.089em;
+	    	visibility: hidden;
+	    	position: absolute;
+	    	top:100%;
+	    	left: 0;
+	    	z-index: 9999;
+	    	margin:0;
+	    	-webkit-transform:translateY(-1em) translateZ(0);
+	    	.transition;
+	    	.opacity(0);
+	    	li {
+	    		float: none;
+	    		a {
+	    			width: 100%;
+	    			display: inline-block;
+	    			.borderbox();
+	    		}
+	    		&.parent { // Styles applied to parent items in level 2
+	    		}
+	    	}
+	    }
+	    /* LEVEL 3 */
+	    ul ul {
+	    	left:100%;
+	    	top:0;
+	    	li {
+	    		&.parent { // Styles applied to parent items in level 3
+	    		}
+	    	}
+	    }
+	    li:hover > ul {
+	    	visibility: visible;
+	    	-webkit-transform:translateY(0) translateZ(0);
+	    	.opacity(1);
+	    }
+	}
+
+	/* 2. TOP NAVIGATION (Add top navigation presentational styles here) */
+	#top {
+	    background: @bg_dark_darker;
+	    display: block;
+	    .clearfix;
+	    .site-description {
+	    	letter-spacing: 0;
+	    }
+	    nav.col-full {
+	    	font-size:.857em;
+	    }
+	    a {
+	    	color: @color_links;
+	    	&:hover {
+	    		color: @color_links_lighter;
+	    	}
+	    }
+	    .site-description {
+	    	font-weight: 400;
+	    	font-size: 1em;
+	    	float: left;
+	    	color: @color_body + #333;
+	    	padding:1em 1.618em 1em 0;
+	    	line-height: 1.618;
+	    	margin:0;
+	    }
+	    .top-navigation {
+	    	float: right;
+	    	color: @bg_dark_darker - #222;
+	    	.social {
+	    		float: right;
+	    		//font-size: .857em;
+	    		.clearfix;
+	    		padding:.75em 0 .75em 1.618em;
+	    		margin-left:1.618em;
+	    		a {
+	    			margin:0 0 0 .53em;
+	    			&:first-of-type {
+	    				margin-left:0;
+	    			}
+	    			&:last-of-type {
+	    				padding-right:0;
+	    			}
+	    		}
+	    	}
+	    	#top-nav {
+	    		float: right;
+	    	}
+	    }
+	    #top-nav, .top-navigation {
+	    	display: block;
+	    	h3 {
+	    		display: none;
+	    	}
+	    }
+	    ul.nav {
+	    	z-index: 999;
+	    	> li { // The following styles are applied ONLY to the top level list items
+	    		> a {
+	    			padding:1em .53em;
+	    			&:after {
+	    				content: "|";
+	    				margin-left:1em;
+	    				color: @bg_dark_darker + #222;
+	    			}
+	    			&:hover {
+	    				color: @color_links_lighter;
+	    			}
+	    		}
+	    		&.current-menu-item {
+	    			a {
+	    				background: none;
+	    			}
+	    		}
+	    		&:hover > a {
+	    			color: @color_links_lighter;
+	    		}
+	    		&:last-child {
+	    			> a {
+	    				&:after {
+	    					display: none;
+	    				}
+	    			}
+	    		}
+	    	}
+	    	/* LEVEL 2 */
+	    	ul {
+	    		background: rgba(255,255,255,0.95);
+	    		.border_radius_bottom;
+	    		.inset_box_shadow(0,.236em,2px,0,rgba(0,0,0,0.05));
+	    		border-bottom:.236em solid @color_links;
+	    		li {
+	    			a {
+	    				color: @color_links;
+	    				&:hover {
+	    					background: @color_links_lighter;
+	    					color: #fff;
+	    				}
+	    			}
+	    			&:hover > a {
+	    				color: #fff;
+	    				background: @color_links_lighter;
+	    			}
+	    		}
+	    	}
+	    	/* LEVEL 3 */
+	    	ul ul {
+	    	}
+	    	li:hover > ul {
+	    	}
+	    }
+	}
+
+	/* 3. MAIN NAVIGATION DROPDOWN MENUS (Add main navigation presentational styles here) */
+
+	/**
+	 * Resets
+	 * As the mobile nav features extensive styling, much of it needs to be reset for desktop orientation
+	 */
+	.show-nav {
+		#inner-wrapper {
+			.border_radius(0);
+		}
+		#navigation {
+			.top-navigation {
+				display: none; // Just in case someone resizes to mobile, opens the nav and then resizes to desktop
+			}
+		}
+	}
+
+	/**
+	 * The main navigation styling
+	 */
+	#navigation  {
+		position: relative;
+		left:auto;
+		float: right;
+		padding-top:0;
+		background: none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+		clear:none;
+		margin:0;
+		width:auto;
+		.menus { // The menu container
+			h3 {
+				display: none;
+			}
+		}
+		a {
+			font-weight: 700;
+		}
+	    ul.nav {
+	    	float: right;
+	    	margin:0;
+	    	> li { // The following styles are applied ONLY to the top level list items
+	    		> a {
+	    			padding:2.244em 1em;
+	    			color: lighten(@bg_dark,40%);
+	    			.transition;
+	    			&:hover {
+	    				.inset_box_shadow(0,.382em,0,0,@color_links_lighter);
+	    				color: #fff;
+	    			}
+	    		}
+	    		&:hover > a {
+	    			.inset_box_shadow(0,.382em,0,0,@color_links_lighter);
+	    			color: #fff;
+	    		}
+	    		&.current-menu-item {
+	    			> a {
+	    				color: #fff;
+	    				&:hover {
+	    					.inset_box_shadow(0,.382em,0,0,@color_links_lighter);
+	    				}
+	    			}
+	    			&:hover {
+	    				> a {
+	    					.inset_box_shadow(0,.382em,0,0,@color_links_lighter);
+	    				}
+	    			}
+	    		}
+	    		&.parent {
+	    			> a {
+	    				&:after {
+	    					.iconafter("\f107");
+	    				}
+	    				&:hover:after {
+	    					color: @color_links_lighter;
+	    				}
+	    			}
+	    			&:hover > a:after {
+	    				color: @color_links_lighter;
+	    			}
+	    		}
+	    	}
+	    	li {  // Overwrite mobile styles
+				a {
+					text-shadow:none;
+					border: 0;
+				}
+				&.current-menu-item {
+					> a {
+						background: none;
+						-webkit-box-shadow:none;
+						box-shadow:none;
+						text-shadow:none;
+						&:after {
+							display: none;
+						}
+					}
+					&.parent > a:after {
+						display: block;
+						line-height: 1.618;
+						font-size: 1em;
+					}
+				}
+				ul {
+					a, ul li a {
+						padding:.53em 1.387em;
+					}
+				}
+			}
+	    	/* LEVEL 2 */
+	    	ul {
+	    		background: fade(@bg_dark_darker,90%);
+	    		padding:1em 0;
+	    		left:0;
+	    		li {
+	    			a {
+	    				color: #fff;
+	    				padding-left:1.387em;
+	    				.transition;
+	    				-webkit-transform:translateZ(0);
+	    				&:hover {
+	    					padding-left:1.618em;
+	    				}
+	    			}
+	    			&.parent {
+	    				> a {
+	    					&:after {
+	    						.iconafter("\f105");
+	    						float: right;
+	    						line-height: 1.618;
+	    					}
+	    					&:hover {
+	    						padding-left:1.618em;
+	    						&:after {
+		    						color: @color_links_lighter;
+		    					}
+		    				}
+	    				}
+	    				&:hover > a {
+	    					padding-left:1.618em;
+	    					&:after {
+		    					color: @color_links_lighter;
+		    				}
+	    				}
+	    			}
+	    		}
+	    	}
+	    	/* LEVEL 3 */
+	    	ul ul {
+	    		top:-1em;
+	    		left:100%; // reapply left 100% as we're offsetting the first child by 1px
+	    	}
+	    	li:hover > ul {
+	    	}
+	    }
+	    ul.cart, ul.rss {
+	    	float: right;
+	    }
+	    .nav-close, .nav-home {
+			display: none;
+		}
+	}
+	// Hide the nav toggle link in desktop orientation
+	.nav-toggle { display: none; }
+
+	// Reset the 3d transforms
+	.csstransforms3d.csstransitions {
+		#navigation, .show-nav #navigation, .show-nav #inner-wrapper {
+			left: 0;
+		    -webkit-transform: translate3d(0%, 0, 0);
+		    -moz-transform: translate3d(0%, 0, 0);
+		    -ms-transform: translate3d(0%, 0, 0);
+		    -o-transform: translate3d(0%, 0, 0);
+		    transform: translate3d(0%, 0, 0);
+		}
+	}
+
+	/* 4. CONTAINERS & COLUMNS */
+	.content-container {
+		padding-left:6.854em;
+		padding-right:6.854em;
+	}
+	.content-container-fullwidth {
+		margin-left:-6.854em;
+		margin-right:-6.854em;
+		padding-left:6.854em;
+		padding-right:6.854em;
+	}
+	.content-container-fullwidth-nopadding {
+		margin-left:-6.854em;
+		margin-right:-6.854em;
+	}
+	#header {
+	    .site-header {
+	    	margin-right:1.618em;
+	        float: left;
+	        h1, h2, h3 {
+	            float:none;
+	        }
+	    }
+	    #logo {
+			margin:2.244em 0 0 0;
+			padding:0;
+			float: left;
+		}
+	    .site-title {
+	    	text-align: left;
+	    }
+	    .site-title {
+	    	padding:0;
+	    	font-size:1.387em;
+	    	a {
+	    		display: block;
+	    		padding:1.618em 0;
+	    	}
+	    }
+	    ul.rss {
+	        margin-right:0;
+	        padding-right:0;
+	        li {
+	            border-right:0;
+	        }
+	    }
+	    ul.rss, ul.cart {
+	        li {
+	            border-right:0;
+	        }
+	    }
+	}
+	#main.fullwidth, .layout-full #main, .col-full {
+	    margin:0 auto;
+	    width:100%;
+	}
+	.entry img {
+	    max-width: 100%;
+	}
+	.entry blockquote {
+		padding-right:15.379em;
+	}
+	.layout-full .entry img {
+	    max-width: 100%;
+	}
+	.page-template-template-sitemap-php  {
+		#sitemap-pages, .product-categories  {
+			float: left;
+			width: 48%;
+		}
+		#sitemap-categories , .products {
+			float: right;
+			width: 48%;
+		}
+		#sitemap-posts  {
+			clear: both;
+		}
+		.woocommerce {
+			.clearfix;
+		}
+	}
+	.page-template-template-contact-php {
+	    .location-twitter  {
+	    	.col-left  {
+	    		float: left;
+	    	}
+	    	#office-location {
+	    	    width: 48%;
+	    	    margin: 0 1em 0 0;
+	    	}
+	    	.contact-social  {
+	    	    float: left;
+	    	    width: 48%;
+	    	    #twitter  {
+	    	    	margin: 0;
+	    	    }
+	    	}
+	    }
+	}
+	#main .type-page, #main .content-box, .single #main > .product, .sensei-wrap {
+		max-width:65.141em;
+		margin-left:auto;
+		margin-right:auto;
+		padding:5.874em 9.505em;
+		.borderbox;
+		.content-box-fullwidth {
+			margin-left:-9.505em;
+			margin-right:-9.505em;
+			padding-left:9.505em;
+			padding-right:9.505em;
+		}
+		.alignleft {
+			margin-left:-9.505em;
+		}
+		.alignright {
+			margin-right:-9.505em;
+		}
+		ul.products {
+			margin-left:-9.505em;
+			margin-right:-9.505em;
+		}
+	}
+	#main .featured-image, #main > .video {
+		max-width:65.141em;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	/* 5. FOOTER WIDGETS */
+	#footer-widgets {
+	    .block {
+	    	margin-right:3.8%;
+	    	float: left;
+	    }
+	    &.col-1 {
+	    	.block {
+	    		width: 100%;
+	    		float: none;
+	    	}
+	    	.footer-widget-1 {
+	    		margin-right:0;
+	    	}
+	    }
+	    &.col-2 {
+	    	.block {
+	    		width: 48%;
+	    	}
+	    	.footer-widget-2 {
+	    		margin-right:0;
+	    	}
+	    }
+	    &.col-3 {
+	    	.block {
+	    		width: 30.75%;
+	    	}
+	    	.footer-widget-3 {
+	    		margin-right:0;
+	    	}
+	    }
+	    &.col-4 {
+	    	.block {
+	    		width: 22.05%
+	    	}
+	    	.footer-widget-4 {
+	    		margin-right:0;
+	    	}
+	    }
+
+	}
+
+	/* 6. IE FIXES */
+
+	.ie7 {
+	    #top-nav {
+	    	position: relative;
+	    	z-index: 9999999;
+	    }
+	    #header {
+	    	position: relative;
+	    	z-index: 9999999;
+	    }
+	}
+
+	/* 7. POSTS */
+
+	.archive-description {
+		font-size: 1.387em;
+		p {
+			max-width:75%;
+		}
+		& + .archive-description {
+			-webkit-box-shadow:none;
+			box-shadow:none;
+		}
+	}
+	.blog-posts-grid {
+		> article {
+			width:33.33333%;
+			padding-top:33.33333%;
+		}
+	}
+
+	.no-csstransitions {
+		.blog-posts-grid {
+			> article.has-image {
+				.post-header, .post-more {
+					.opacity(0);
+					.transition;
+				}
+				&:hover {
+					.post-header, .post-more {
+						.opacity(1);
+					}
+				}
+			}
+		}
+	}
+
+	#comments {
+		ul.children {
+			margin-left:6.854em;
+		}
+	}
+
+	/* Homepage */
+	// Homepage contact section
+	.homepage-contact {
+		ul {
+			max-width:65.141em;
+			margin:0 auto;
+			li {
+				width:25%;
+				margin:0;
+			}
+		}
+	}
+
+}
+@media only screen and ( max-width: @smallscreen ) {
+	.blog-posts-grid {
+		> article {
+			width:100%;
+			padding-top:100%;
+		}
+	}
+}
+@media only screen and ( min-width: 536px ) {
+	#main .type-page, #main .content-box, .single #main > .product {
+		ul.products {
+			li.product {
+				width:50%;
+				padding-top:50%;
+			}
+		}
+	}
+}
+@media only screen and (min-width: @largescreen) {
+	.blog-posts-grid {
+		> article {
+			width:25%;
+			padding-top:25%;
+		}
+	}
+}
+// Ipad Specific
+@media only screen and ( width: 1024px ) and ( height:768px ) {
+	.blog-posts-grid {
+		.post {
+			font-size:.8em;
+		}
+	}
+	ul.products {
+		li.product {
+			font-size:.8em;
+		}
+	}
+}

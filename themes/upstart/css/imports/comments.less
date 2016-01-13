@@ -1,0 +1,145 @@
+/* Comments */
+#comments {
+	.commentlist {
+		list-style: none;
+		margin:0;
+		li {
+			list-style: none;
+		}
+		.comment-head {
+			.clearfix;
+			margin-bottom:1.618em;
+			.avatar {
+				float: left;
+				width:4.236em;
+				.border_radius(100%);
+				margin-right:2.618em;
+			}
+			.name {
+				font-weight: 700;
+				display: block;
+				font-size: 1.387em;
+			}
+			.date, .edit {
+				font-size: .857em;
+				text-transform: uppercase;;
+			}
+			.date {
+				margin-right:1.618em;
+				a {
+					&:before {
+						.iconbefore( "\f017" );
+					}
+				}
+			}
+			.edit {
+				a {
+					&:before {
+						.iconbefore( "\f040" );
+					}
+				}
+			}
+			a {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+		.comment-entry {
+			padding:2.618em;
+			background: @bg_light;
+			margin-bottom:2.618em;
+			.border_radius;
+			position: relative;
+			&:before {
+				content: "";
+				display: block;
+				border:1em solid @bg_light;
+				border-color:transparent transparent @bg_light transparent;
+				position: absolute;
+				top:-1.9em;
+				left:1.387em;
+			}
+		}
+		.comment-container {
+
+		}
+	}
+
+	ul.children {
+		margin-left:1em;
+		padding:0;
+		.cancel-comment-reply {  }
+	}
+	.navigation {
+		a {
+			display: block;
+			text-decoration: none;
+		}
+	}
+	.pingbacks {
+		li.pingback {
+			margin: 0 0 1.618em;
+			.reply {
+				display: none;
+			}
+		}
+	}
+	.comment-reply-link {
+		&:before {
+			.iconbefore( "\f064" );
+		}
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+.nocomments {
+	.message( "\f0e6" );
+	.large_bottom_margin;
+}
+
+/* Comments Form */
+#respond  {
+	label {
+		color: lighten(@color_body, 10%);
+	}
+	#reply-title {
+		small {
+			display: block;
+			margin:0 0 1.618em;
+		}
+	}
+	#commentform  {
+		.comment-form-author, .comment-form-email, .comment-form-url {
+			width:30.75%;
+			float: left;
+			margin-right:3.8%;
+		}
+		.comment-form-url {
+			margin-right:0;
+		}
+		label {
+			display:block;
+		}
+		input.txt, textarea {
+			width:100%;
+		}
+	}
+}
+
+/* Pingbacks / Trackbacks */
+.pinglist {
+	li {
+		margin: 0 0 0 1.618em;
+		list-style-type: decimal;
+		.author {
+			font-weight: bold;
+		}
+		.date { }
+		.pingcontent {
+			display: block;
+			margin:0 0 1.618em;
+		}
+	}
+}

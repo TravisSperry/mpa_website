@@ -1,0 +1,2 @@
+[18-Feb-2015 01:28:51 America/Denver] PHP Fatal error:  Call to undefined function add_action() in /home2/mathplus/public_html/wp-content/plugins/font-awesome/plugin.php on line 53
+[26-Dec-2015 05:26:46 America/Denver] PHP Fatal error:  Call to undefined function add_action() in /home1/mathplus/public_html/wp-content/plugins/font-awesome/plugin.php on line 53

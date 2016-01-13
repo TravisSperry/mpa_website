@@ -1,0 +1,113 @@
+/**
+ * Integration styles
+ */
+@import url(../../../../css/mixins.less);
+
+.widget_woothemes_our_team {
+	.clearfix;
+	.team-member {
+		width:50%;
+		float: left;
+		background: @bg_dark;
+		overflow: hidden;
+		padding-top:50%;
+		position: relative;
+		color: fade(@bg_light,70%);
+		h3 {
+			margin:0;
+			color: #fff;
+		}
+		.avatar {
+			width:100%;
+			height: auto;
+			margin:0;
+			position: absolute;
+			top:0;
+			left:0;
+		}
+		.wrap {
+			position: absolute;
+			bottom:0;
+			left:0;
+			right:0;
+			height:9.505em;
+			.borderbox;
+			padding:2.618em;
+			background: -moz-linear-gradient(top,  fade(@bg_dark,0%) 0%, fade(@bg_dark,75%) 45%, @bg_dark 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,fade(@bg_dark,0%)), color-stop(45%,fade(@bg_dark,75%)), color-stop(100%,@bg_dark));
+			background: -webkit-linear-gradient(top,  fade(@bg_dark,0%) 0%,fade(@bg_dark,75%) 45%,@bg_dark 100%);
+			background: -o-linear-gradient(top,  fade(@bg_dark,0%) 0%,fade(@bg_dark,75%) 45%,@bg_dark 100%);
+			background: -ms-linear-gradient(top,  fade(@bg_dark,0%) 0%,fade(@bg_dark,75%) 45%,@bg_dark 100%);
+			background: linear-gradient(to bottom,  fade(@bg_dark,0%) 0%,fade(@bg_dark,75%) 45%,@bg_dark 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003d5c6f', endColorstr='#a63d5c6f',GradientType=0 );
+			.transition(height,ease,.4s);
+			.team-member-text {
+				display: none;
+			}
+		}
+		&:hover {
+			.wrap {
+				height:100%;
+				overflow: auto;
+				.team-member-text {
+					display: block;
+				}
+			}
+		}
+	}
+	.author-details {
+		list-style: none;
+		margin-left:0 !important;
+	}
+	h3.member {
+		a {
+			color: #fff;
+			&:hover {
+				text-decoration: none;
+			}
+			&:after {
+				.iconafter( "\f08e" );
+			}
+		}
+	}
+	.role {
+		font-weight: 700;
+		color: #fff;
+	}
+}
+
+// Layout
+@media only screen and ( max-width: @smallscreen ) {
+	#main {
+		.widget_woothemes_our_team {
+			.large_bottom_margin;
+			.team-member {
+				width:100%;
+				padding-top:100%;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 769px) {
+	#main {
+		.widget_woothemes_our_team {
+			.large_bottom_margin;
+			.team-member {
+				width:25%;
+				padding-top:25%;
+				font-size:.857em;
+			}
+		}
+		.type-page, .content-box {
+			.widget_woothemes_our_team .team-members {
+				margin-left:-9.505em;
+				margin-right:-9.505em;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: @largescreen) {
+
+}

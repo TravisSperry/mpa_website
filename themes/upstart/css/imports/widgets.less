@@ -1,0 +1,157 @@
+/* General */
+.widget  {
+	margin-bottom: 1.618em;
+	ul {
+		clear: both;
+		list-style-position: inside;
+		list-style-type: disc;
+		li {
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+/* Search Form */
+#searchform  {
+	width:100%;
+	.clearfix;
+	.s, #s {
+		float: left;
+		.borderbox;
+		margin-right:.202em;
+	}
+	label { display: none; }
+}
+
+/* Flickr */
+.widget_woo_flickr {
+	h3 {
+		span {
+			color:#0051d8;
+			span {
+				color:#ff1183;
+			}
+		}
+	}
+	.wrap  {
+		margin: 1em 0 0;
+		text-align: center;
+		.flickr_badge_image {
+			display: inline-block;
+			margin: 0 1em 1.387em;
+			a {
+				img {
+					display: block;
+					.border_radius(300px);
+				}
+			}
+		}
+	}
+}
+
+/* Calendar */
+#wp-calendar{
+	caption {
+		padding:1em;
+	}
+	th, td {
+		text-align: center;
+		padding: .53em 0;
+	}
+}
+
+/* Author Info */
+.widget_woo_blogauthorinfo {
+	.avatar {
+		padding: .382em;
+		border: 1px solid @border_main;
+	}
+	.left {
+		float: left;
+		margin:0 1em .618em 0;
+	}
+	.right {
+		float: right;
+		margin:0 .618em 1em;
+	}
+}
+
+/* Tabs */
+.widget_woodojo_tabs, .woocommerce_tabs, .woocommerce-tabs {
+	clear:both;
+	ul.nav-tabs, ul.tabs {
+		margin-bottom:1.618em;
+		list-style: none;
+		border-bottom: .202em solid @border_main;
+		.clearfix;
+		li {
+			float: left;
+			margin-bottom:0;
+			display: block;
+			a {
+				border-bottom:0;
+				background: fade(@border_main,50%);
+				border:.202em solid @border_main;
+				border-bottom-width:0;
+				display: block;
+				color: @color_links;
+				margin:.202em 0 0 -.202em !important;
+				-webkit-border-radius:2px 2px 0 0 !important;
+				-moz-border-radius:2px 2px 0 0 !important;
+				border-radius:2px 2px 0 0 !important;
+				padding:.382em 1em !important;
+				font-weight: 700;
+				&:hover {
+					color: @color_body;
+					text-decoration: none;
+				}
+			}
+			&:last-child {
+				a {
+					border-right-width: .202em;
+				}
+			}
+			&:first-child {
+				a {
+					margin-left: 0 !important;
+				}
+			}
+			&.active {
+				position: relative;
+				a {
+					position: relative;
+					background: #fff;
+					color: @color_body;
+					padding-top:.584em !important;
+					margin-top:0 !important;
+					&:after {
+						content: "";
+						display: block;
+						position: absolute;
+						bottom:-4px;
+						left:0;
+						right:0;
+						height:4px;
+						background: #fff;
+					}
+				}
+			}
+		}
+	}
+	.panel {
+		border:.202em solid @border_main;
+		padding:2.618em;
+		border-top:0;
+	}
+}
+.woocommerce-tabs {
+	.large_bottom_margin;
+	ul.tabs {
+		margin-bottom:0;
+	}
+}

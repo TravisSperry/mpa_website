@@ -1,0 +1,386 @@
+@font-face {
+    font-family: 'MyriadProSemibold';
+    src: url('../fonts/myriadpro-semibold_opentype-webfont.eot');
+    src: url('../fonts/myriadpro-semibold_opentype-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/myriadpro-semibold_opentype-webfont.woff') format('woff'),
+         url('../fonts/myriadpro-semibold_opentype-webfont.ttf') format('truetype'),
+         url('../fonts/myriadpro-semibold_opentype-webfont.svg#MyriadProSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MyriadProLight';
+    src: url('../fonts/myriadpro-light-webfont.eot');
+    src: url('../fonts/myriadpro-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/myriadpro-light-webfont.woff') format('woff'),
+         url('../fonts/myriadpro-light-webfont.ttf') format('truetype'),
+         url('../fonts/myriadpro-light-webfont.svg#MyriadProLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MyriadProRegular';
+    src: url('../fonts/myriadpro-regular-webfont.eot');
+    src: url('../fonts/myriadpro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/myriadpro-regular-webfont.woff') format('woff'),
+         url('../fonts/myriadpro-regular-webfont.ttf') format('truetype'),
+         url('../fonts/myriadpro-regular-webfont.svg#MyriadProRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+  margin-bottom: 10px;
+  margin-top:0px;
+}
+body{
+	background-color:#e1eaf3;
+}
+#inner-wrapper{
+	background-color:#e1eaf3;
+}
+.container{
+	margin-top:20px;
+}
+.home_top_left{
+	padding-right:0px;
+  padding-left:0px;
+}
+.home_top_right{
+	background-color:#eaeaea;
+	border:1px #d1d5d9 solid;
+	padding:20px;
+	height:329px;
+	font-size:24px;
+	color:#0f5caa;
+}
+@media screen and (max-width:1200px) {
+  .home_top_right{
+    height:100%;
+  }
+}
+h1{
+	font-size:50px;
+	font-family:'MyriadProSemibold', Arial;
+}
+.home_top_right_main{
+	padding-left:0px;
+  padding-right:0px;
+}
+.home_top_right p{
+	padding-bottom:50px;
+}
+.home_top_right .btn{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#17d9f4+0,03bed4+100 */
+background: #17d9f4; /* Old browsers */
+background: -moz-linear-gradient(top,  #17d9f4 0%, #03bed4 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #17d9f4 0%,#03bed4 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #17d9f4 0%,#03bed4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17d9f4', endColorstr='#03bed4',GradientType=0 ); /* IE6-9 */
+border:none;
+color:#FFFFFF;
+font-size:14px;
+}
+.cats{
+	margin-top:30px;
+}
+.cats .col-md-4 .cats_inner{
+	border:1px #d1d5d9 solid;
+}
+@media screen and (max-width: 991px) {
+  .cats .col-md-4{
+    margin:10px 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.cats_inner p{
+	padding:10px;
+	background:#FFFFFF;
+	color:#a8a8a8;
+	font-size:16px;
+}
+.cats_inner .cats_content{
+	padding:10px;
+	background:#FFFFFF;
+	margin-bottom:0px;
+	color:#a8a8a8;
+	font-size:16px;
+}
+.cats_inner .cats_content .btn{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#db4516+1,f04f1d+100 */
+	background: #db4516; /* Old browsers */
+	background: -moz-linear-gradient(top,  #db4516 1%, #f04f1d 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #db4516 1%,#f04f1d 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #db4516 1%,#f04f1d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db4516', endColorstr='#f04f1d',GradientType=0 ); /* IE6-9 */
+	color:#FFFFFF;
+	border:none;
+	margin-left:5px;
+}
+.top_head_cat1{
+	background-color:#00a99d;
+	padding:5px 15px;
+	color:#FFFFFF;
+	font-size:25px;
+	font-family:'MyriadProSemibold', Arial;
+}
+.top_head_cat2{
+	background-color:#3e5c6e;
+	padding:5px 15px;
+	color:#FFFFFF;
+	font-size:25px;
+	font-family:'MyriadProSemibold', Arial;
+}
+.top_head_cat3{
+	background-color:#1f82c1;
+	padding:5px 15px;
+	color:#FFFFFF;
+	font-size:25px;
+	font-family:'MyriadProSemibold', Arial;
+}
+
+.upcoming{
+	background-color:#3e5c6e;
+	padding:10px;
+	margin-top:30px;
+	padding-bottom:5px;
+}
+h2{
+	color:#FFFFFF;
+	font-size:36px;
+	font-family:'MyriadProSemibold', Arial;
+}
+.blog_new{
+	background-color:#00a99d;
+	padding:10px;
+	margin-top:30px;
+	padding-bottom:5px;
+}
+.blog_new_list{
+	margin-top:10px;
+}
+.thumbnail {
+  padding: 0px;
+}
+.thumbnail .blog_img{
+  padding: 10px;
+  min-height:250px;
+  text-align:center
+}
+.thumbnail .caption {
+	background-color:#ececec;
+	border:1px solid #9b9b9b;
+	border-radius:2px;
+	padding:10px;
+}
+.thumbnail .caption .btn{
+	background-color:#848484;
+	font-family:'MyriadProRegular', Arial;
+	font-size:18px;
+	border:none;
+}
+.blog_title{
+	min-height:55px;
+	font-family:'MyriadProRegular', Arial;
+	font-size:18px;
+	color:#a8a8a8
+}
+.thumbnail .blog_img img{
+	margin:auto;
+}
+.blog_read_more_block{
+	text-align:center;
+}
+.blog_read_more_block .btn{
+	font-family:'MyriadProRegular', Arial;
+	font-size:18px;
+	border:none;
+}
+.blog_read_more_block .red_mre{
+	background-color:#00a99d;
+}
+.blog_read_more_block .sbcr_me{
+	background-color:#e84b1a;
+}
+.parents_kids{
+	background-image:url(../../images/parents_kids.png);
+	background-position: center top;
+    background-repeat: no-repeat;
+    margin-top: 30px;
+}
+.parents_kids_container{
+	background: #ffffff none repeat scroll 0 0;
+    height: 250px;
+    margin-top: 205px;
+	box-shadow: 0 0px 8px #888888;
+}
+.parents_kids_container h1{
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:20px;
+	font-size:32px;
+	color:#707070;
+}
+.parents_kids_container p{
+	font-style:italic;
+	font-family: "MyriadProRegular",Arial;
+	font-size: 16px;
+}
+.locations{
+	background-color:#1f82c1;
+	padding:10px;
+	margin-top:30px;
+	padding-bottom:5px;
+}
+.thumbnail .loc_img{
+  padding: 0px;
+  min-height:269px;
+  text-align:center;
+  position:relative
+}
+.loc_title{
+	background: #fff none repeat scroll 0 0;
+	bottom: 0;
+	color: #a8a8a8;
+	font-family: "MyriadProRegular",Arial;
+	font-size: 18px;
+	min-height: 40px;
+	opacity: 0.8;
+	padding-top: 7px;
+	position: absolute;
+	width: 100%;
+}
+.hilli{
+	background-image:url('http://www.mathplusacademy.com/wp-content/uploads/2015/06/IMG_2777.jpg');
+	background-position:center center;
+	background-size:contain;
+	background-repeat:no-repeat
+}
+.powel{
+	background-image:url('http://www.mathplusacademy.com/wp-content/uploads/2012/05/Powell-MPA.jpg');
+	background-position:center center;
+	background-size:contain;
+	background-repeat:no-repeat
+}
+.new_alb{
+	background-image:url('http://www.mathplusacademy.com/wp-content/uploads/2012/05/Gahanna_location.jpg');
+	background-position:center center;
+	background-size:contain;
+	background-repeat:no-repeat
+}
+.free_ass{
+	background-color:#848484;
+	border:none
+}
+.moe_info{
+	background-color:#1f82c1 !important;
+	border:none
+}
+.blog_new_list .caption p{
+	text-align:center;
+}
+.homepage-contact ul span {
+  box-sizing: unset;
+}
+.homepage-contact {
+  background: #f5f5f5 none repeat scroll 0 0;
+  border-top: 2px solid #0072be;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.carousel_row{
+	margin-top:30px;
+}
+.carousel{
+	height:auto !important;
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+	min-height: 366px;
+}
+.bs-example{
+	margin: 20px;
+}
+.carousel-caption {
+  left: 0;
+  text-align:left;
+  padding-bottom:0;
+  bottom:0px;
+  background-image:url(../../images/slider_2_bg.png);
+  background-position:center center;
+  background-size:contain;
+  background-repeat:repeat;
+  right:0px;
+}
+.carousel-caption h3{
+	font-family: "MyriadProRegular",Arial;
+	font-size: 18px;
+	padding-left:20px;
+}
+.carousel-caption .btn{
+	background-color:#00a99d;
+	border:none;
+}
+
+#myCarousel1 .carousel-caption {
+  background-image:url(../../images/slider_1_back.png);
+  background-position:center center;
+  background-size:contain;
+  background-repeat:repeat;
+}
+
+#myCarousel1 .carousel-caption {
+	color:#1F1F1F
+}
+.blog_list_but{
+	text-align:left !important;
+  margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  /*.home_top_right_main {
+  	padding-left: 15px;
+   }
+   .home_top_left {
+	  padding-right: 15px;
+	}*/
+	.parents_kids_container {
+	  height: 300px;
+	}
+	.cats .col-md-4 .cats_inner {
+		margin-bottom:20px;
+	}
+	.carousel {
+	  margin-bottom: 20px;
+	}
+	.homepage-contact a {
+    	color: #47b39d;
+    	font-size: 35px;
+	}
+	.homepage-contact ul span::before {
+	  font-size: 80px;
+	}
+	.home_top_right {
+	  height: 355px;
+	  padding: 20px;
+	}
+	.carousel .item img {
+	  margin: 0 auto;
+	  min-height: 181px;
+	}
+	.home_top_right {
+	  height: auto;
+	  padding: 20px;
+	  float:right;
+	}
+	.home_top_right p {
+	  padding-bottom: 20px;
+	}
+	.homepage-contact ul span {
+	  box-sizing: unset;
+	}
+}

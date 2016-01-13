@@ -1,0 +1,16 @@
+<wpml-config>
+	<admin-texts>
+		<key name='wew-subscribe-to-waitlist-str' />
+		<key name='wew-subscribe-backorders' />
+		<key name='wew-out-of-stock-message' />
+		<key name='wew-notify-available-product' />
+		<key name='wew-admin-notification-on-subscription' />
+		<key name='wew-variations-out-of-stock-message' />
+		<key name='wew-subscription-email-subject' />
+		<key name='wew-subscription-email-from-name' />
+		<key name='woowaitilist-default-email-options' />
+		<key name='wew-no-email-alert' />
+		<key name='wew-subscribe-product-success-msg' />
+		<key name='wew-subscribe-variation-success-msg' />
+	</admin-texts>
+</wpml-config>

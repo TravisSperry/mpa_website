@@ -1,0 +1,1 @@
+jQuery(document).ready(function(e){jQuery("ul.products li.product").hover(function(){jQuery(this).find(".button").removeClass("bounceOutRight").addClass("animated bounceInLeft")},function(){jQuery(this).find(".button").removeClass("bounceInLeft").addClass("bounceOutRight")});jQuery(".woocommerce-message, .woocommerce-error").addClass("animated bounce")});

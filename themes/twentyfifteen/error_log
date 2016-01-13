@@ -1,0 +1,4 @@
+[19-Jul-2015 12:48:06 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home2/mathplus/public_html/wp-content/themes/twentyfifteen/404.php on line 10
+[05-Oct-2015 05:45:05 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home1/mathplus/public_html/wp-content/themes/twentyfifteen/404.php on line 10
+[04-Nov-2015 22:13:11 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home1/mathplus/public_html/wp-content/themes/twentyfifteen/404.php on line 10
+[14-Nov-2015 22:15:14 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home1/mathplus/public_html/wp-content/themes/twentyfifteen/404.php on line 10

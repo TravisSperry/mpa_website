@@ -1,0 +1,353 @@
+/*
+WOO CUSTOM STYLESHEET
+---------------------
+
+Instructions:
+
+Add your custom styles in this file instead of style.css so it
+is easier to update the theme. Simply copy an existing style
+from style.css to this file, and modify it to your liking. */
+
+
+/*
+GLOBAL STYLES
+----------------
+Add styles beneath this line that you want to be applied across your entire site */
+
+
+/*
+DESKTOP STYLES
+-----------------
+Add styles inside the media query below that you only want to be applied to the desktop layout of your site */
+
+@media only screen and (min-width: 768px) {
+	/* Desktop styles go here */
+}
+
+h1 {
+  font-weight: 200;
+}
+h2,
+.beta {
+  font-weight:200
+}
+h3,
+.gamma {
+  font-weight:200
+}
+h4 {
+  font-weight:200
+}
+h5 {
+  font-weight:200
+}
+h6 {
+  font-weight:200
+}
+
+li {
+	list-style-position: inside;
+}
+
+#header {
+  background: white;
+  border-bottom: 0.3em solid white;
+}
+
+#top {
+    background: #3e5c6e;
+}
+#top a {
+    color: white;
+}
+
+#top .top-navigation .social {
+    padding: .5em 0 .5em 1.618em;
+}
+
+#top ul.nav > li > a {
+    padding: 0.53em .53em;
+}
+
+#navigation a {
+    font-weight: 500;
+}
+
+#navigation ul.nav > li > a {
+    padding: 1em .5em;
+}
+
+#navigation ul.nav > li > a:hover {
+    box-shadow: inset 0 0.382em 0 0 #1f82c1;
+    -webkit-box-shadow: inset 0 0.382em 0 0 #1f82c1;
+    color: #1f82c1;
+}
+
+#navigation ul.nav > li:hover > a {
+    box-shadow: inset 0 0.382em 0 0 #1f82c1;
+    -webkit-box-shadow: inset 0 0.382em 0 0 #1f82c1;
+    color: #1f82c1;
+}
+  #navigation ul.nav > li.parent > a:hover:after {
+    color: #1f82c1;
+  }
+  #navigation ul.nav > li.parent:hover > a:after {
+    color: #1f82c1;
+  }
+  #navigation ul.nav ul li.parent > a:hover:after {
+    color: #1f82c1;
+  }
+  #navigation ul.nav ul li.parent:hover > a:after {
+    color: #1f82c1;
+  }
+
+  #navigation ul.nav > li.current-menu-item > a {
+    color: #1f82c1;
+  }
+
+  #navigation ul.nav > li.current-menu-item:hover > a {
+    box-shadow: inset 0 0.382em 0 0 #1f82c1;
+    -webkit-box-shadow: inset 0 0.382em 0 0 #1f82c1;
+  }
+
+  #header #logo {
+    margin: 1em 0 0 0;
+  }
+
+#main .type-page .alignleft, #main .content-box .alignleft, .single #main > .product .alignleft, .sensei-wrap .alignleft {
+    margin-left: 0em;
+  }
+
+#main .type-page .alignright, #main .content-box .alignright
+, .single #main > .product .alignright, .sensei-wrap .alignright {
+    margin-right: 0em;
+  }
+
+#breadcrumbs {
+  padding-top: 0.618em;
+  padding-bottom: 0.618em;
+}
+
+.homepage-contact ul li.twitter span:before {
+  content: "\f082";
+}
+
+#main .featured-image:after {
+  position: static;
+}
+
+/*--------------------*/
+/* INFUSIONSOFT FORMS */
+/*--------------------*/
+ol.infusionForms br{
+	display: none;
+}
+ol.infusionForms .screenReader {
+  left: -9999px;
+  position: absolute;
+  top: -9999px;
+  display: none;
+}
+
+ol.infusionForms {
+  margin: 0 0 2.618em;
+  list-style: none;
+}
+ol.infusionForms:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+ol.infusionForms li {
+  clear: both;
+  float: left;
+  margin-bottom: 1.618em;
+  position: relative;
+  width: 48%;
+}
+ol.infusionForms li:nth-child(2n+1) {
+  margin-right: 3.8%;
+}
+ol.infusionForms li:nth-child(2n) {
+  clear: none;
+}
+ol.infusionForms li.textarea,
+ol.infusionForms li.screenReader,
+ol.infusionForms li.inline,
+ol.infusionForms li.buttons,
+ol.infusionForms li input.txt,
+ol.infusionForms li textarea {
+  width: 100%;
+}
+ol.infusionForms li .error {
+  display: block;
+  color: red;
+}
+ol.infusionForms li.textarea .error {
+  display: block;
+}
+ol.infusionForms li.screenReader {
+  margin-bottom: 0;
+}
+ol.infusionForms li.inline {
+  clear: both;
+  float: left;
+}
+ol.infusionForms li.inline input {
+  width: auto;
+  margin-right: .53em;
+  position: relative;
+  top: -0.5px;
+}
+ol.infusionForms li.inline label {
+  display: inline;
+  float: none;
+  width: auto;
+  font-size: .857em;
+  font-weight: normal;
+  font-style: italic;
+}
+ol.infusionForms li.buttons {
+  clear: both;
+  float: left;
+  text-align: left;
+}
+ol.infusionForms label {
+  cursor: pointer;
+  display: block;
+  font-weight: 700;
+  margin: 0 0 1em;
+}
+select {
+    padding: 0.53em;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius: 4px;
+    background: #f8f8f8;
+    color:#888;
+    display: inline-block;
+    cursor:pointer;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+
+#header .cart-contents .amount,#header .cart-contents .count{border:.202em solid #1f82c1;background:#1f82c1;color:#fff;}#header .cart-contents .count{background:0;color:#1f82c1;}
+#header .cart-contents:hover .amount,#header .cart-contents:hover .count{border-color:#ff6c00;color:#ff6c00}#header .cart-contents:hover .amount{background:#ff6c00;color:#fff}
+#header .cart-contents{padding-top:1em!important}
+
+#header .nav-toggle {
+	right: 1em;
+	position: absolute;
+	left: auto;
+}
+@media only screen and (min-width:768px){
+
+.flexslider li.slide .slide-content {
+	left: 10%;
+	right: 50%;
+	top: 10%;
+  	padding: 1.0em;
+  	-webkit-border-radius:14px;
+    -moz-border-radius:14px;
+    border-radius: 14px;
+	background: rgba(0,0,0,0.85);
+  	font-weight: 300;
+}
+
+.flexslider h1{
+	font-size: 1.618em;
+	font-weight: 500;
+}
+
+.flexslider li.slide{
+  background: #687774;
+}
+
+#main .widget_woothemes_testimonials{background: #1481c3}
+#main .widget_woothemes_testimonials .testimonials-list .quote .testimonials-text{color:white;overflow:visible}
+
+}
+
+.blog-posts-grid {
+	background: #e7e7e7;
+}
+
+.tribe-mini-calendar-event .tribe-events-event-image {
+  margin-top:6px;
+  margin-bottom:6px;
+}
+
+.tribe-mini-calendar-event .list-info {
+  font-size: 13px;
+  width:100%;
+}
+
+.footer-widget-1 .tribe-mini-calendar-event {
+  display:inline-block;
+  width: 22%;
+  margin-right: 3%;
+  float: left;
+  border:none;
+}
+
+.footer-widget-1 .tribe-events-widget-link {
+  clear: both;
+  text-align: right;
+  padding-top: 12px;
+  border-top: 1px solid #dedede;
+}
+
+.footer-widget-1 .attachment-thumbnail {
+  margin: 0 0;
+  width: 100%;
+  height: 175px;
+}
+
+.footer-widget-1 .street-address {
+  display: inline-block;
+  padding: 10px 0;
+}
+
+.tribe-mini-calendar-event .list-info h2,
+.tribe-mini-calendar-event .list-info h2 a {
+  font-size : 16px;
+  font-weight:bold;
+  line-height:20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding:0;
+}
+
+.footer-widget-1 .list-date{
+  display:none;
+}
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+.footer-widget-1 .tribe-mini-calendar-event {
+  display: block;
+  width: 100%;
+  float: none;
+  border:none;
+  }
+}
+
+.homepage-video {
+	background-color: #efefef;
+  max-width: 65.141em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0em 5em;
+}
+
+.bigtext {
+  font-size:24px;
+}
+.mediumtext {
+  font-weight:300;
+  color: #414a54;
+  font-size:22px;
+}

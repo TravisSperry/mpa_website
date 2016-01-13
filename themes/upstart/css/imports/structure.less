@@ -1,0 +1,217 @@
+/* Header */
+#header {
+	clear: both;
+	background: @bg_dark;
+	border-bottom:.53em solid @bg_dark_darker;
+	.clearfix;
+	.site-title, .site-description {
+	    color:#000;
+	    display: none;
+	    text-align: center;
+	    a {
+	    	color: darken(@color_body, 20%);
+	    	text-transform: none;
+	    	font-weight: normal;
+	    	text-decoration: none;
+	    	&:hover {
+	    		text-decoration: underline;
+	    	}
+	    }
+	}
+	#logo {
+		display: block;
+		margin:0 auto;
+		padding:1.387em 0;
+		max-width:11.089em;
+		img {
+			height: auto;
+		}
+	}
+	.site-title {
+		margin-bottom:0;
+		word-wrap:break-word;
+		font-weight: 700;
+		font-size: 1em;
+		padding:1.618em 0;
+	}
+	.site-description {
+		margin-bottom:1.618em;
+	}
+	.site-header {
+		.clearfix;
+		a {
+			color: #fff;
+			font-weight: 700 !important;
+			&:after {
+				.iconafter( "\f135" );
+				color: @color_alt;
+				.transition(all, ease, 2s);
+				-webkit-transform:translateY(.236em) rotate(-45deg);
+			}
+			&:hover {
+				text-decoration: none;
+				&:after {
+					-webkit-transform:translateY(-13em) translateX(-3em) rotate(-85deg) scale(4);
+				}
+			}
+		}
+	}
+	.nav-toggle {
+		position:absolute;
+		top:1em;
+		left:1em;
+		cursor: pointer;
+		&:after {
+			.iconafter( "\f0c9" );
+			background: @color_links;
+			color: @bg_light + #111;
+			height:1.5em;
+			width:1.5em;
+			text-align: center;
+			line-height: 1.5;
+			font-size:1.618em;
+			.border_radius(2px);
+			margin-left:0;
+		}
+
+		a {
+			color: #fff;
+			.text_shadow(0,-1px,0,rgba(0,0,0,0.4));
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		span {
+			display: none;
+		}
+	}
+	.site-description {
+		color: lighten(@color_body, 10%);
+		font-style: italic;
+	}
+	#topad {
+		float: right;
+	}
+}
+
+/* General Layout */
+.content-container {
+	padding-left:1.618em;
+	padding-right:1.618em;
+}
+.content-container-fullwidth {
+	.clearfix;
+	margin-left:-1.618em;
+	margin-right:-1.618em;
+	padding-left:1.618em;
+	padding-right:1.618em;
+}
+.content-container-fullwidth-nopadding {
+	margin-left:-1.618em;
+	margin-right:-1.618em;
+}
+
+/* Footer */
+#footer{
+	background: @bg_dark;
+	.clearfix;
+	padding-top:4.236em;
+	padding-bottom:4.236em;
+	color: @color_body + #333;
+	position: relative;
+	&:before {
+		content:"";
+	    display:block;
+	    position:absolute;
+	    top:0;
+	    left:0;
+	    height:.25em;
+	    background: @bg_dark_darker;
+	    width:5em;
+	    box-shadow:
+	        5em 0 0 0 @color_links,
+	        10em 0 0 0 @color_alt,
+	        15em 0 0 0 @color_links_lighter,
+	        20em 0 0 0 @bg_dark_darker,
+	        25em 0 0 0 @color_links,
+	        30em 0 0 0 @color_alt,
+	        35em 0 0 0 @color_links,
+	        40em 0 0 0 @color_alt,
+	        45em 0 0 0 @color_links_lighter,
+	        50em 0 0 0 @bg_dark_darker,
+	        55em 0 0 0 @color_links,
+	        60em 0 0 0 @color_alt,
+	        65em 0 0 0 @color_links,
+	        70em 0 0 0 @color_alt,
+	        75em 0 0 0 @color_links_lighter,
+	        80em 0 0 0 @bg_dark_darker,
+	        85em 0 0 0 @color_links,
+	        90em 0 0 0 @color_alt,
+	        95em 0 0 0 @color_links,
+	        100em 0 0 0 @color_alt,
+	        105em 0 0 0 @color_links_lighter,
+	        110em 0 0 0 @bg_dark_darker,
+	        115em 0 0 0 @color_links,
+	        120em 0 0 0 @color_alt;
+		}
+	a {
+		color: @color_body + #666;
+		font-weight: 700;
+		&:hover {
+			text-decoration: none;
+			color: @color_body + #999;
+		}
+	}
+	.col-left, .col-right {
+		width:48%;
+		p:last-child {
+			margin:0;
+		}
+	}
+	.col-left {
+		float: left;
+	}
+	.col-right {
+		float: right;
+		text-align: right;
+		img {
+			display: inline-block;
+		}
+	}
+	#credit {
+		img {
+			vertical-align: middle;
+		}
+		span {
+			display: none;
+		}
+	}
+}
+
+#footer-widgets {
+	background: @border_main;
+	padding-top:4.236em;
+	padding-bottom:4.236em;
+	.widget {
+		margin-bottom:3.631em;
+		background: rgba(255,255,255,0.25);
+		padding:1.618em;
+		.border_radius_bottom;
+		border-top:.202em solid rgba(255,255,255,0.45);
+	}
+	a {
+		font-weight: 700;
+	}
+	.button {
+		color: @color_links_lighter;
+		&:hover {
+			color: #fff;
+		}
+	}
+	.block {
+		.widget:last-child {
+			margin-bottom:0;
+		}
+	}
+}

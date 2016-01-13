@@ -1,0 +1,24 @@
+*** Upstart Changelog ***
+
+2013.12.09 - version 1.0.1
+ * New - Better integration with WooSlider
+   style.css
+
+ * Fix - footer contact alignment.
+   style.css
+
+ * Fix - Checkout layout on handheld devices
+   includes/integrations/woocommerce/woocommerce.less,
+   includes/integrations/woocommerce/woocommerce.css
+
+ * Fix - Footer contact links should appear regardless of whether footer widgets are specified.
+   footer.php
+
+ * Fix - Adds missing Subscribe & Connect social icons in the woo_display_social_icons() function.
+   includes/theme-functions.php
+
+ * Tweak - Improved homepage slider display on handheld devices
+   style.css
+
+2013.11.28 - version 1.0.0
+ * First release!
